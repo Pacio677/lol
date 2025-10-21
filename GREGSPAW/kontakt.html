@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kontakt | GREG-SPAW</title>
+<style>
+:root{
+  --panel:rgba(25,25,25,0.92);
+  --accent:#d40000; --accent-2:#ff4d4d;
+}
+*{box-sizing:border-box}
+body{
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:url("img/stal.jpg") no-repeat center center fixed;
+  background-size:cover;margin:0;color:#f4f4f4;
+  animation:fadeIn 1s ease-out;
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* HEADER */
+header{
+  background:linear-gradient(180deg,#444 0%,#111 100%);
+  height:200px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.8)
+}
+header h1{
+  font-size:44px;letter-spacing:3px;margin:0;
+  background:linear-gradient(90deg,#ff3030,#ff9a9a,#ff3030);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 0 16px rgba(255,0,0,.35);animation:shine 5s linear infinite
+}
+@keyframes shine{from{background-position:0%}to{background-position:200%}}
+
+/* NAV */
+nav{
+  background:rgba(20,20,20,.95);
+  display:flex;justify-content:center;gap:48px;padding:16px;
+  box-shadow:0 3px 10px rgba(0,0,0,.6);position:sticky;top:0;z-index:10
+}
+nav a{
+  color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:1px;
+  position:relative;transition:all .3s ease
+}
+nav a::after{
+  content:"";position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-2);
+  transition:width .3s ease
+}
+nav a:hover{color:var(--accent-2);transform:translateY(-2px)}
+nav a:hover::after{width:100%}
+
+/* MAIN */
+main{
+  max-width:1100px;margin:50px auto;padding:60px;border-radius:24px;
+  background:var(--panel);backdrop-filter:blur(2px);
+  box-shadow:0 0 40px rgba(0,0,0,.75);animation:rise .9s ease-out;text-align:center
+}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+h2{margin:0 0 18px;font-size:30px}
+
+/* CARDS */
+.grid{
+  display:grid;gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin:24px 0 8px
+}
+.card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,.45);
+  transition:transform .35s ease, box-shadow .35s ease
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(255,0,0,.35)}
+.card .big{font-size:20px;font-weight:800;margin-bottom:6px}
+.card a{color:#ff9a9a;text-decoration:none}
+.card a:hover{text-decoration:underline}
+
+/* CTA */
+.cta{
+  margin:28px auto 6px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center
+}
+.btn{
+  background:var(--accent);color:#fff;border:0;border-radius:10px;
+  padding:14px 22px;font-weight:800;letter-spacing:.5px;cursor:pointer;
+  box-shadow:0 0 18px rgba(255,0,0,.5);transition:transform .25s ease, box-shadow .25s ease
+}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 28px rgba(255,0,0,.85)}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.2)}
+.btn.secondary:hover{border-color:#fff}
+
+/* MAP + NOTE */
+.map{
+  margin-top:34px;border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.08)
+}
+.note{
+  margin-top:18px;background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.2);
+  padding:14px;border-radius:12px;color:#eee
+}
+.note strong{color:#fff}
+
+/* FOOTER */
+footer{
+  background:#111;color:#cfcfcf;text-align:center;padding:20px;
+  border-top:2px solid var(--accent);box-shadow:0 -3px 15px rgba(0,0,0,.7)
+}
+
+/* SMALL */
+p{font-size:18px;line-height:1.7;color:#e9e9e9}
+</style>
+</head>
+<body>
+
+<header><h1>Skontaktuj się z GREG-SPAW</h1></header>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="galeria.html">Galeria</a>
+  <a href="informacje.html">Informacje</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main>
+  <h2>Dane kontaktowe</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="big">Adres</div>
+      <p><strong>GREG-SPAW</strong><br/>Kobiele Małe 95A<br/>97-524 Kobiele Wielkie</p>
+    </div>
+    <div class="card">
+      <div class="big">Telefon</div>
+      <p><a href="tel:+48508633981">+48 508 633 981</a><br/>pon.–pt. 8:00–16:00</p>
+    </div>
+    <div class="card">
+      <div class="big">E-mail</div>
+      <p><a href="mailto:biuro@gregspaw.pl">biuro@gregspaw.pl</a></p>
+    </div>
+    <div class="card">
+      <div class="big">Godziny</div>
+      <p>pon.–pt. 8:00–16:00<br/>odbiór osobisty na miejscu</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn" href="mailto:biuro@gregspaw.pl?subject=Zapytanie%20GREG-SPAW&body=Dzie%C5%84%20dobry%2C%0D%0Achcia%C5%82bym%20dopyta%C4%87%20o...">Napisz do nas</a>
+    <a class="btn secondary" href="tel:+48508633981">Zadzwoń teraz</a>
+  </div>
+
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=Kobiele%20Ma%C5%82e%2095A&output=embed"
+      width="100%" height="380" style="border:0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="note">
+    <strong>Odbiór osobisty i płatność przy odbiorze:</strong> zamówienia wydajemy w siedzibie firmy
+    (Kobiele Małe 95A). Przyjmujemy płatność gotówką przy odbiorze.
+  </div>
+</main>
+
+<footer>&copy; 2025 GREG-SPAW — Kobiele Małe 95A</footer>
+</body>
+</html>

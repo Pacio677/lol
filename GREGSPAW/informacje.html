@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Informacje | GREG-SPAW</title>
+<style>
+/* --- GLOBAL --- */
+:root{
+  --bg-dark:#111;
+  --bg-panel:rgba(25,25,25,0.92);
+  --text:#f4f4f4;
+  --muted:#cfcfcf;
+  --accent:#d40000;
+  --accent-2:#ff4d4d;
+}
+*{box-sizing:border-box}
+body{
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:url("img/stal.jpg") no-repeat center center fixed;
+  background-size:cover;margin:0;color:var(--text);
+  animation:fadeBody 1.1s ease-out;
+}
+@keyframes fadeBody{from{opacity:0}to{opacity:1}}
+
+/* --- HEADER --- */
+header{
+  background:linear-gradient(180deg,#444 0%,#111 100%);
+  height:200px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.7);text-align:center;
+}
+header h1{
+  font-size:44px;letter-spacing:3px;margin:0;
+  background:linear-gradient(90deg,#ff3030,#ff9a9a,#ff3030);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 0 18px rgba(255,0,0,.35);animation:shimmer 5s linear infinite;
+}
+@keyframes shimmer{from{background-position:0%}to{background-position:200%}}
+
+/* --- NAV --- */
+nav{
+  background:rgba(20,20,20,.95);
+  display:flex;justify-content:center;gap:48px;padding:16px;
+  box-shadow:0 3px 10px rgba(0,0,0,.6);position:sticky;top:0;z-index:10
+}
+nav a{
+  color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:1px;
+  position:relative;transition:all .3s ease
+}
+nav a::after{
+  content:"";position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-2);
+  transition:width .3s ease
+}
+nav a:hover{color:var(--accent-2);transform:translateY(-2px)}
+nav a:hover::after{width:100%}
+
+/* --- MAIN --- */
+main{
+  max-width:1200px;margin:50px auto;padding:60px;border-radius:24px;
+  background:var(--bg-panel);backdrop-filter:blur(2px);
+  box-shadow:0 0 40px rgba(0,0,0,.75);animation:fadeUp 1s ease-out
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+h2{margin:0 0 18px;font-size:30px;color:#fff}
+p{color:#e9e9e9;font-size:18px;line-height:1.7}
+
+/* --- FEATURES --- */
+.grid{
+  display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin:28px 0 10px
+}
+.card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,.45);
+  transition:transform .35s ease, box-shadow .35s ease
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(255,0,0,.35)}
+.card h3{margin:0 0 8px;font-size:20px;color:#fff}
+.card p{margin:0;color:#ddd}
+
+/* --- COUNTERS --- */
+.counters{
+  display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  margin:36px 0
+}
+.counter{
+  background:rgba(255,255,255,.05);border-radius:14px;padding:20px;text-align:center;
+  border:1px solid rgba(255,255,255,.08)
+}
+.counter .num{font-size:34px;font-weight:800;color:var(--accent-2);text-shadow:0 0 16px rgba(255,0,0,.35)}
+.counter .lbl{color:#ddd;margin-top:6px}
+
+/* --- TIMELINE --- */
+.timeline{
+  position:relative;margin:38px 0 8px;padding-left:22px
+}
+.timeline::before{
+  content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.2)
+}
+.step{
+  position:relative;margin:18px 0 18px 10px;padding-left:22px
+}
+.step::before{
+  content:"";position:absolute;left:-6px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:var(--accent-2);box-shadow:0 0 12px rgba(255,0,0,.6)
+}
+.step h4{margin:0 0 6px;color:#fff}
+.step p{margin:0;color:#dcdcdc}
+
+/* --- FAQ --- */
+.faq{
+  margin-top:36px;border-top:1px dashed rgba(255,255,255,.15);padding-top:26px
+}
+details{
+  background:rgba(255,255,255,.05);border-radius:12px;margin:10px 0;padding:14px 16px;
+  border:1px solid rgba(255,255,255,.08);transition:transform .25s ease
+}
+details[open]{transform:scale(1.01)}
+summary{
+  cursor:pointer;font-weight:700;color:#fff;list-style:none;outline:none
+}
+details p{margin:8px 0 0}
+
+/* --- FOOTER --- */
+footer{
+  background:var(--bg-dark);color:#cfcfcf;text-align:center;padding:20px;
+  border-top:2px solid var(--accent);box-shadow:0 -3px 15px rgba(0,0,0,.7)
+}
+</style>
+</head>
+<body>
+
+<header><h1>Informacje o firmie GREG-SPAW</h1></header>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="galeria.html">Galeria</a>
+  <a href="informacje.html">Informacje</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Kim jesteśmy?</h2>
+    <p><strong>GREG-SPAW</strong> tworzy stal z charakterem — nowoczesne nogi do stolików,
+      ramy i konstrukcje metalowe. Łączymy precyzję wykonania, estetykę i trwałość, aby Twoje
+      projekty wyglądały świetnie przez lata.</p>
+  </section>
+
+  <section>
+    <h2>Nasze atuty</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Precyzja i jakość</h3>
+        <p>Obróbka stali na wysokim poziomie, kontrola jakości na każdym etapie.</p>
+      </div>
+      <div class="card">
+        <h3>Szybkie terminy</h3>
+        <p>Sprawna realizacja zamówień, przewidywalne czasy dostarczenia.</p>
+      </div>
+      <div class="card">
+        <h3>Projekt na wymiar</h3>
+        <p>Indywidualne realizacje: wymiary, kolor, detale spawów — pod Ciebie.</p>
+      </div>
+      <div class="card">
+        <h3>Solidne wykończenie</h3>
+        <p>Malowanie proszkowe, zabezpieczenia antykorozyjne, dbałość o detale.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="counters">
+    <div class="counter">
+      <div class="num">10+ lat</div>
+      <div class="lbl">Doświadczenia</div>
+    </div>
+    <div class="counter">
+      <div class="num">5000+</div>
+      <div class="lbl">Wykonanych elementów</div>
+    </div>
+    <div class="counter">
+      <div class="num">48 h</div>
+      <div class="lbl">Szybkie wyceny</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Jak pracujemy</h2>
+    <div class="timeline">
+      <div class="step">
+        <h4>1. Konsultacja</h4>
+        <p>Ustalamy wymiary, materiał, kolor i szczegóły wykończenia.</p>
+      </div>
+      <div class="step">
+        <h4>2. Wycena</h4>
+        <p>Przesyłamy wycenę i termin — jasno i bez zaskoczeń.</p>
+      </div>
+      <div class="step">
+        <h4>3. Produkcja</h4>
+        <p>Realizujemy zamówienie z dbałością o każdy spaw i krawędź.</p>
+      </div>
+      <div class="step">
+        <h4>4. Odbiór osobisty</h4>
+        <p>Kobiele Małe 95A — płatność przy odbiorze, szybka finalizacja.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>FAQ — najczęściej pytacie</h2>
+    <details>
+      <summary>Jakie kolory malowania proszkowego są dostępne?</summary>
+      <p>Najczęściej wybierany: czarny mat. Na zamówienie: RAL w macie, półmacie i połysku.</p>
+    </details>
+    <details>
+      <summary>Czy wykonujecie elementy na wymiar?</summary>
+      <p>Tak — przygotujemy projekt pod podane wymiary i potrzeby.</p>
+    </details>
+    <details>
+      <summary>Jak wygląda płatność i odbiór?</summary>
+      <p>Odbiór osobisty w Kobiele Małe 95A, płatność przy odbiorze (gotówka).</p>
+    </details>
+  </section>
+</main>
+
+<footer>&copy; 2025 GREG-SPAW — Kobiele Małe 95A</footer>
+</body>
+</html>
